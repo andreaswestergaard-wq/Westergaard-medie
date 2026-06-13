@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Ingen indeksering af privatlivspolitik
+Disallow: /cookie-og-privatliv.html
+
+Sitemap: https://DITDOMÆNE.dk/sitemap.xml

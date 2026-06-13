@@ -1,0 +1,62 @@
+# =============================================
+#  Westergaard Medie — Apache / Simply.com
+# =============================================
+
+# --- Tegnsæt & MIME-typer ---
+AddDefaultCharset UTF-8
+AddType image/svg+xml .svg
+AddType application/javascript .js
+AddType text/css .css
+
+# --- HTTPS tvungen omdirigering ---
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# --- www → uden www (vælg én og hold fast) ---
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+# --- Brugerdefineret 404-side ---
+ErrorDocument 404 /404.html
+
+# --- Fjern .html-endelse fra URL'er ---
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]
+
+# --- Omdirigér /index → / ---
+RewriteCond %{THE_REQUEST} /index\.html
+RewriteRule ^index\.html$ / [R=301,L]
+
+# --- Browser-caching (hastighed) ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css               "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/svg+xml          "access plus 1 year"
+  ExpiresByType image/jpeg             "access plus 1 year"
+  ExpiresByType image/png              "access plus 1 year"
+  ExpiresByType image/webp             "access plus 1 year"
+  ExpiresByType font/woff2             "access plus 1 year"
+  ExpiresByType text/html              "access plus 1 hour"
+</IfModule>
+
+# --- Komprimering (gzip) ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript
+  AddOutputFilterByType DEFLATE image/svg+xml application/json
+</IfModule>
+
+# --- Sikkerhedsheaders ---
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# --- Bloker adgang til skjulte filer ---
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>

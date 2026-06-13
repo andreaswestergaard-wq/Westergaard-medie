@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Studio Elvira — Hår & skønhed i København</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="demo-base.css" />
+  <style>
+    :root {
+      --c1:     #130f16;
+      --c2:     #2a1f32;
+      --ca:     #c9a66c;
+      --bg:     #0d0b0f;
+      --bg2:    #1a1620;
+      --text:   #f0ece8;
+      --muted:  #9b8fa0;
+      --border: rgba(255,255,255,.1);
+    }
+
+    body { background: var(--bg); }
+
+    .hd-logo { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.25rem; letter-spacing: .06em; }
+    .site-hd { background: var(--bg); border-bottom-color: rgba(255,255,255,.08); }
+    .hd-cta  { background: var(--ca); color: #1a1a1a; }
+    .hd-cta:hover { background: #b8965c; }
+
+    .hero { background: var(--c1); }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.5rem, 5vw, 3.8rem); }
+
+    .card   { background: var(--bg2); }
+    .ab-photo { background: var(--bg2); }
+    .t-card   { background: var(--bg2); }
+    .t-card blockquote { color: var(--text); }
+    .form-wrap { background: var(--bg2); }
+    .fg input, .fg textarea { background: var(--bg); color: var(--text); border-color: rgba(255,255,255,.12); }
+    .ab-stat  { background: var(--bg2); }
+
+    /* Treatments pricing */
+    .price-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+    .price-card {
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--r); padding: 1.75rem;
+      background: var(--bg2);
+    }
+    .price-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--ca); margin-bottom: .5rem; }
+    .price-card .from { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: .35rem; }
+    .price-card .amount { font-size: 1.5rem; font-weight: 600; color: var(--text); margin-bottom: .75rem; }
+    .price-card ul { list-style: none; display: flex; flex-direction: column; gap: .45rem; }
+    .price-card li { font-size: .85rem; color: var(--muted); display: flex; gap: .5rem; }
+    .price-card li::before { content: '—'; color: var(--ca); flex-shrink: 0; }
+    .btn-book {
+      display: block; margin-top: 1.5rem;
+      background: var(--ca); color: #1a1a1a;
+      padding: .7rem 1rem; border-radius: var(--r);
+      font-weight: 600; font-size: .85rem; text-align: center;
+    }
+
+    @media (max-width: 860px) { .price-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header class="site-hd">
+    <div class="container hd-inner">
+      <div class="hd-logo">Studio Elvira</div>
+      <nav class="hd-nav">
+        <a href="#behandlinger">Behandlinger</a>
+        <a href="#om">Om salonen</a>
+        <a href="#anmeldelser">Anmeldelser</a>
+        <a href="#booking">Booking</a>
+      </nav>
+      <a href="#booking" class="hd-cta">Book tid →</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">FREDERIKSBERG · KBH</div>
+      <h1>Hår & skønhed —<br><em>skabt til dig</em></h1>
+      <p class="hero-sub">En eksklusiv salon med plads til nærvær. Oplev forskellen når en dygtig stylist tager sig tid til at forstå netop dit hår og din stil.</p>
+      <div class="hero-btns">
+        <a href="#booking" class="btn-ca">Book din tid →</a>
+        <a href="#behandlinger" class="btn-ghost-w">Se behandlinger</a>
+      </div>
+      <div class="hero-trust">
+        <div class="ht-item"><div class="ht-dot"></div><span>CERTIFICERET STYLIST</span></div>
+        <div class="ht-item"><div class="ht-dot"></div><span>PREMIUM PRODUKTER</span></div>
+        <div class="ht-item"><div class="ht-dot"></div><span>5 ★ PÅ GOOGLE</span></div>
+        <div class="ht-item"><div class="ht-dot"></div><span>ONLINE BOOKING</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec-bg" id="behandlinger">
+    <div class="container">
+      <p class="sec-label">Behandlinger & priser</p>
+      <h2 class="sec-h">Vælg den rigtige behandling</h2>
+      <p class="sec-sub">Alle behandlinger er skræddersyet til dit hår og dine ønsker. Pris afhænger af hårlængde og omfang.</p>
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Klipning</h3>
+          <p class="from">Fra</p>
+          <p class="amount">295 kr.</p>
+          <ul>
+            <li>Dame: fra 295 kr.</li>
+            <li>Herre: fra 195 kr.</li>
+            <li>Børn: fra 150 kr.</li>
+            <li>Wash & blowdry: fra 195 kr.</li>
+          </ul>
+          <a href="#booking" class="btn-book">Book klipning →</a>
+        </div>
+        <div class="price-card">
+          <h3>Farve & highlights</h3>
+          <p class="from">Fra</p>
+          <p class="amount">595 kr.</p>
+          <ul>
+            <li>Helfarve: fra 595 kr.</li>
+            <li>Highlights: fra 695 kr.</li>
+            <li>Balayage: fra 895 kr.</li>
+            <li>Colour correction: pris aftales</li>
+          </ul>
+          <a href="#booking" class="btn-book">Book farvebehandling →</a>
+        </div>
+        <div class="price-card">
+          <h3>Behandlinger</h3>
+          <p class="from">Fra</p>
+          <p class="amount">350 kr.</p>
+          <ul>
+            <li>Hårkur & maske: fra 350 kr.</li>
+            <li>Keratinbehandling: fra 1.200 kr.</li>
+            <li>Hovedbundsbehandling: fra 250 kr.</li>
+            <li>Brude-makeup: fra 800 kr.</li>
+          </ul>
+          <a href="#booking" class="btn-book">Book behandling →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="om">
+    <div class="container">
+      <div class="grid-2">
+        <div class="ab-photo">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 20v-1a6 6 0 0 1 12 0v1"/></svg>
+        </div>
+        <div class="ab-text">
+          <p class="sec-label">Om salonen</p>
+          <h2>Hej, jeg er Elvira</h2>
+          <p>Jeg åbnede Studio Elvira i 2019 med et enkelt formål: at skabe et trygt og eksklusivt rum, hvor du kan slappe af og blive den bedste version af dig selv.</p>
+          <p>Med uddannelse fra London og over 10 års erfaring som stylist ved jeg, at godt hår starter med en ordentlig konsultation. Alle besøg begynder med en samtale om dine ønsker.</p>
+          <div class="ab-stats">
+            <div class="ab-stat"><strong>10+</strong><span>års erfaring</span></div>
+            <div class="ab-stat"><strong>London</strong><span>uddannet stylist</span></div>
+            <div class="ab-stat"><strong>1.200+</strong><span>tilfredse kunder</span></div>
+            <div class="ab-stat"><strong>5 ★</strong><span>Google-vurdering</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec-bg" id="anmeldelser">
+    <div class="container">
+      <p class="sec-label">Anmeldelser</p>
+      <h2 class="sec-h">Det siger vores kunder</h2>
+      <div class="grid-3">
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <blockquote>"Endelig en frisør der lytter. Elvira foreslog en stil der passede perfekt til mit ansigt — og resultatet var fantastisk."</blockquote>
+          <cite>— Camille R., Frederiksberg</cite>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <blockquote>"Balayage-behandlingen var i en helt anden klasse. Naturlig, smuk og super vedholdende. Kan ikke forestille mig at gå et andet sted hen."</blockquote>
+          <cite>— Sofia M., Nørrebro</cite>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <blockquote>"Brude-makeupet til mit bryllup var perfekt — holdbar hele dagen og smukkere end jeg turde håbe. Alle spurgte om det!"</blockquote>
+          <cite>— Anne-Sofie H., Valby</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-text">
+          <p class="sec-label">Book din tid</p>
+          <h2>Vi glæder os til at se dig</h2>
+          <p>Book online eller ring til os. Vi bestræber os på at finde et tidspunkt der passer dig — også i weekenden.</p>
+          <ul class="c-list">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg><a href="tel:+4533220000">33 22 00 00</a></li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:hej@studio-elvira.dk">hej@studio-elvira.dk</a></li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Tirs–lør 09–18 &nbsp;·&nbsp; Man & søn lukket</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Gammel Kongevej 47, Frederiksberg</li>
+          </ul>
+        </div>
+        <div class="form-wrap">
+          <div class="fg"><label>Navn</label><input type="text" placeholder="Dit fulde navn" /></div>
+          <div class="fg"><label>Telefon</label><input type="tel" placeholder="Dit telefonnummer" /></div>
+          <div class="fg"><label>Behandling</label>
+            <select><option>Klipning</option><option>Farve & highlights</option><option>Balayage</option><option>Keratinbehandling</option><option>Andet</option></select>
+          </div>
+          <div class="fg"><label>Besked</label><textarea placeholder="Ønsker, spørgsmål eller foretrukne tidspunkter..."></textarea></div>
+          <button class="btn-submit">Send bookingforespørgsel →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>Studio Elvira</strong> &nbsp;·&nbsp; Gammel Kongevej 47, Frederiksberg &nbsp;·&nbsp; CVR: 23 45 67 89</p>
+      <p>© 2026 Studio Elvira &nbsp;·&nbsp; Alle rettigheder forbeholdes</p>
+    </div>
+  </footer>
+
+  <div class="demo-bar">
+    <span class="demo-bar-label">Demoside · Virksomhed og indhold er fiktivt</span>
+    <a href="index.html">Vil du have en lignende side? Westergaard Medie →</a>
+  </div>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+  </script>
+</body>
+</html>
